@@ -58,12 +58,24 @@ export default () => {
         {movieList.map((item, key) => {
           return <MovieRow key={key} title={item.title} items={item.items} />;
         })}
-      </section> 
+      </section>
       <footer>
-        Feito com <span role="img" aria-label="coração">❤️</span> pela B7Web
-        Direitos de imagem para Netflix
-        Dados retirados do site Themoviedb.org
+        Feito com{" "}
+        <span role="img" aria-label="coração">
+          ❤️
+        </span>{" "}
+        pela B7Web Direitos de imagem para Netflix Dados retirados do site
+        Themoviedb.org
       </footer>
+
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <img
+            src="https://media.tenor.com/DQyztbEmqnYAAAAC/netflix-loading.gif"
+            alt="carregando"
+          />
+        </div>
+      )}
     </div>
   );
 };
